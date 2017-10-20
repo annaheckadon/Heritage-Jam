@@ -107,7 +107,7 @@
     var mymap = L.mapbox.map('mapid').setView([32.8872, 13.1913], 2);    
     L.mapbox.styleLayer('mapbox://styles/annaheckadon/cj8tbnu1od9gn2smfmg1ca67k').addTo(mymap);
   
-  // mymap.scrollWheelZoom.disable() 
+    mymap.scrollWheelZoom.disable() 
 
     mymap.on('click', function() {
   if (mymap.scrollWheelZoom.enabled()) {
