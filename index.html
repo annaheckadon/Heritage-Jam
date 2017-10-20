@@ -104,7 +104,7 @@
 <script>
     //basemap initialize
     L.mapbox.accessToken = 'pk.eyJ1IjoiYW5uYWhlY2thZG9uIiwiYSI6ImNqOHJ4NHM0YTAydGEyd280bnkxcXR5N3QifQ.7ZQzNCXyC667A36ih1jKvg';
-    var mymap = L.mapbox.map('mapid', scrollWheelZoom: false).setView([32.8872, 13.1913], 2);    
+    var mymap = L.mapbox.map('mapid',{scrollWheelZoom: false}).setView([32.8872, 13.1913], 2);    
     L.mapbox.styleLayer('mapbox://styles/annaheckadon/cj8tbnu1od9gn2smfmg1ca67k').addTo(mymap);
 
     map.on('click', function() {
