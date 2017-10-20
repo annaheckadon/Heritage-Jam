@@ -106,8 +106,15 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoiYW5uYWhlY2thZG9uIiwiYSI6ImNqOHJ4NHM0YTAydGEyd280bnkxcXR5N3QifQ.7ZQzNCXyC667A36ih1jKvg';
     var mymap = L.mapbox.map('mapid').setView([32.8872, 13.1913], 2);    
     L.mapbox.styleLayer('mapbox://styles/annaheckadon/cj8tbnu1od9gn2smfmg1ca67k').addTo(mymap);
-    mymap.maxZoom: 2; 
- 
+
+    map.on('click', function() {
+  if (map.scrollWheelZoom.enabled()) {
+    map.scrollWheelZoom.disable();
+    }
+    else {
+    map.scrollWheelZoom.enable();
+    }
+  });
  
     //marker 1
     var marker = L.marker([41.3851, 2.1734]).addTo(mymap);
