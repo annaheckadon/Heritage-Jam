@@ -22,6 +22,26 @@
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
+    
+    <!-- Mapping Stuff -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
+
+ <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+   integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+   crossorigin=""></script>
+ 
+ <meta charset=utf-8 />
+ <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+
+    <style>
+ #mapid {height: 625px;
+  width: 1025px;}
+ }
+</style>
 
   </head>
 
@@ -77,7 +97,167 @@
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
           </div>
         </div>
-        <div class="row text-center">
+       
+        <div id="mapid"></div>
+
+<script>
+    //basemap initialize
+    L.mapbox.accessToken = 'pk.eyJ1IjoiYW5uYWhlY2thZG9uIiwiYSI6ImNqOHJ4NHM0YTAydGEyd280bnkxcXR5N3QifQ.7ZQzNCXyC667A36ih1jKvg';
+    var mymap = L.mapbox.map('mapid').setView([32.8872, 13.1913], 2);    
+    L.mapbox.styleLayer('mapbox://styles/annaheckadon/cj8tbnu1od9gn2smfmg1ca67k').addTo(mymap);
+ 
+ 
+    //marker 1
+    var marker = L.marker([41.3851, 2.1734]).addTo(mymap);
+    marker.bindPopup("<q>When we bought the interrail ticket with @sebastian_awesome_monroy in march, we were extremely excited and a bit scared at the same time, in June we started to think <q>okey so how will we do it?!</q>, in the beginning of August we both knew that it's time to pack the backpacks and start ...</q> <a href='https://www.instagram.com/p/BaU0r2ch_PH/?taken-by=gabrielalesnianska'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarkerClick(e) {
+     mymap.flyTo([41.3851, 2.1734], 10);
+    }
+    marker.on('click', onMarkerClick);
+ 
+    //marker 2
+    var marker2 = L.marker([44.8378, -0.5792]).addTo(mymap);
+    marker2.bindPopup("<q>An other door of bordeaux ...</q> <a href='https://www.instagram.com/p/BaW59k-DYiz/?taken-by=lisebgv'>Click to see the memory on Instagram!</a>");
+    function onMarker2Click(e) {
+     mymap.flyTo([44.8378, -0.5792], 10); 
+    }
+    marker2.on('click', onMarker2Click); 
+ 
+ 
+    //marker3
+    var marker3 = L.marker([43.9252, 21.3735]).addTo(mymap);
+    marker3.bindPopup("<q>#childhood #memories ...</q> <a href='https://www.instagram.com/p/BaW59ksAWNP/?taken-by=max_meyer_10'>Click to see the memory on Instagram!</a>");
+    function onMarker3Click(e) {
+     mymap.flyTo([43.9252, 21.3735], 10); 
+    }
+    marker3.on('click', onMarker3Click);
+ 
+ 
+    //marker 4
+    var marker4 = L.marker([40.7128, -74.0060]).addTo(mymap);
+    marker4.bindPopup("<q>... NYC ...</q> <a href='https://www.instagram.com/p/BaW569FhRYd/?taken-by=naifsadiahmom'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker4Click(e) {
+     mymap.flyTo([40.7128, -74.0060], 10); 
+    }
+    marker4.on('click', onMarker4Click);
+ 
+ 
+    //marker5
+    var marker5 = L.marker([37.0891, -8.2479]).addTo(mymap);
+    marker5.bindPopup("<q>Finding peace and inspiration ...</q> <a href='https://www.instagram.com/p/BaW55KkB3pb/?taken-by=giaco_jacky'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker5Click(e) {
+     mymap.flyTo([37.0891, -8.2479], 10); 
+    }
+    marker5.on('click', onMarker5Click);
+ 
+  
+    //marker6
+    var marker6 = L.marker([-3.3869, 36.6830]).addTo(mymap);
+    marker6.bindPopup("<q>My Tanzania Experience ...</q> <a href='https://www.instagram.com/p/BaW54o1hmKg/?taken-by=travelbuzzfever'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker6Click(e) {
+     mymap.flyTo([-3.3869, 36.6830], 10); 
+    }
+    marker6.on('click', onMarker6Click);
+ 
+ 
+    //marker7
+    var marker7 = L.marker([49.1144, 2.3932]).addTo(mymap);
+    marker7.bindPopup("<q>Sherwood parc ...</q> <a href='https://www.instagram.com/p/BaW53o6F4Bf/?taken-by=agathe_mzs'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker7Click(e) {
+     mymap.flyTo([49.1144, 2.3932], 10); 
+    }
+    marker7.on('click', onMarker7Click);
+ 
+ 
+    //marker8
+    var marker8 = L.marker([33.7341225, -84.3989019]).addTo(mymap);
+    marker8.bindPopup("<q>And then this happened! This wonderful human graced our booth with her presence! ...</q> <a href='https://www.instagram.com/p/BaW529uFUBU/?taken-by=stuzoclothing'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker8Click(e) {
+     mymap.flyTo([33.7341225, -84.3989019], 10); 
+    }
+    marker8.on('click', onMarker8Click);
+ 
+  
+    //marker9STARTHERE: Chennai, India
+    var marker9 = L.marker([13.0827, 80.2707]).addTo(mymap);
+    marker9.bindPopup("<q>I am just beyond #crazy at times. I miss the #beach #shell #crab crawling along the #seashore of #chennai This place is a #party #heaven Great #seafood  ...</q> <a href='https://www.instagram.com/p/BaW52aChGvG/?taken-by=iamsyamilisyam'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker9Click(e) {
+     mymap.flyTo([13.0827, 80.2707], 10); 
+    }
+    marker9.on('click', onMarker9Click);
+ 
+ 
+    //marker10 Palace Theatre, Calgary
+    var marker10 = L.marker([51.0455, -114.0665]).addTo(mymap);
+    marker10.bindPopup("<q>Well I can cross seeing Gavin Degraw off my bucket list! So grateful for great friends and a good crowd! As you can see... some of us were more enthusiastic than others!! 😂 *(see pic 3) ...</q> <a href='https://www.instagram.com/p/BaW5101giZt/?taken-by=syndacious'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker10Click(e) {
+     mymap.flyTo([51.0455, -114.0665], 10); 
+    }
+    marker10.on('click', onMarker10Click);
+ 
+ 
+    //marker11 Kamp-Lintfort
+    var marker11 = L.marker([51.4958, 6.5321]).addTo(mymap);
+    marker11.bindPopup("<q>so grateful to have you always by my side, mum you're my everything ❤ i love u 👭 ...</q> <a href='https://www.instagram.com/p/BaW5zbmlYBw/?taken-by=janine_kascherus'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker11Click(e) {
+     mymap.flyTo([51.4958, 6.5321], 10); 
+    }
+    marker11.on('click', onMarker11Click);
+ 
+ 
+    //marker12 Eiffel Tower
+    var marker12 = L.marker([48.8584, 2.2945]).addTo(mymap);
+    marker12.bindPopup("<q>Watching and waiting as the world spins on. ...</q> <a href='https://www.instagram.com/p/BaW5y1Dgk6A/?taken-by=skimphotography'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker12Click(e) {
+     mymap.flyTo([48.8584, 2.2945], 10); 
+    }
+    marker12.on('click', onMarker12Click);
+ 
+  
+    //marker13 Bratislava Castle
+    var marker13 = L.marker([48.1421, 17.1002]).addTo(mymap);
+    marker13.bindPopup("<q>View over 3 countries - pretty lit ...</q> <a href='https://www.instagram.com/p/BaW5s-NBP2f/?taken-by=semprepetrus'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker13Click(e) {
+     mymap.flyTo([48.1421, 17.1002], 10); 
+    }
+    marker13.on('click', onMarker13Click);
+ 
+    
+    //marker14 Costa Rica
+    var marker14 = L.marker([9.7489, -83.7534]).addTo(mymap);
+    marker14.bindPopup("<q>It's #takemebacktuesday 😋 Wishing I could be in #costarica right now ...</q> <a href='https://www.instagram.com/p/BaW35hEjgbD/?taken-by=400mruth'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker14Click(e) {
+     mymap.flyTo([9.7489, -83.7534], 10); 
+    }
+    marker14.on('click', onMarker14Click);
+ 
+   
+    //marker15 Wellington, New Zealand
+    var marker15 = L.marker([-41.2865, 174.7762]).addTo(mymap);
+    marker15.bindPopup("<q>I hope my cappucino will ease me in this windy, rainy and freezing welly ...</q> <a href='https://www.instagram.com/p/BaXUvmegxNt/?taken-by=nidsnids_d'>Click to see the memory on Instagram!</a>"); 
+ 
+    function onMarker15Click(e) {
+     mymap.flyTo([-41.2865, 174.7762], 10); 
+    }
+    marker15.on('click', onMarker15Click);
+ 
+  
+ 
+</script> 
+        
+        <!--<div class="row text-center">
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -103,7 +283,7 @@
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <!-- Portfolio Grid -->
