@@ -11,9 +11,9 @@ p {
   line-height: 1.75; }
 
 a {
-  color: #ffcd21; } /*changed from fed136*/
+  color: #fed136; } 
   a.active, a:active, a:focus, a:hover {
-    color: #ffb400; } /*changed from fec503*/
+    color: #fec503; } 
 
 h1,
 h2,
@@ -76,7 +76,7 @@ body {
     color: #fed136;
     font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive; }
     #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-      color: #ff9a00; } /*changed from fec503*/
+      color: #fec503; } 
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 90%;
     font-weight: 400;
@@ -114,7 +114,7 @@ body {
 
 header.masthead {
   text-align: center;
-  color: black; /*changed from white*/
+  color: white; 
   background-image: url("../img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
